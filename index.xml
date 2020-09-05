@@ -8,16 +8,21 @@
     <language>en-us</language>
     <lastBuildDate>Sat, 05 Sep 2020 16:56:23 +0800</lastBuildDate><atom:link href="https://ycsayit.github.io/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>hugo搭建博客站点</title>
+      <title>Github Pages &#43; Hugo搭建个人博客</title>
       <link>https://ycsayit.github.io/post/buildhugoblog/</link>
       <pubDate>Sat, 05 Sep 2020 16:56:23 +0800</pubDate>
       
       <guid>https://ycsayit.github.io/post/buildhugoblog/</guid>
-      <description>解决go包管理代理网址无法访问：proxy.golang.org 默认使用的是proxy.golang.org，在国内无法访问
- $ go install
+      <description>安装Hugo Hugo官方安装文档：https://gohugo.io/getting-started/installing/
+Windows环境下源码安装
+依赖工具：
+ Go Git  下载Hugo源码并编译
+$ git clone https://github.com/gohugoio/hugo.git $ cd hugo/ $ go install  解决go包管理代理网址无法访问：proxy.golang.org 默认使用的是proxy.golang.org，在国内无法访问
+$ go install
 go: github.com/BurntSushi/locker@v0.0.0-20171006230638-a6e239ea1c69: Get &amp;ldquo;https://proxy.golang.org/github.com/%21burnt%21sushi/locker/@v/v0.0.0-20171006230638-a6e239ea1c69.mod&amp;quot;: dial tcp 34.64.4.81:443: connectex: A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond.
- 解决方法： 换一个国内能访问的代理地址：https://goproxy.cn
-go env -w GOPROXY=https://goproxy.cn </description>
+解决方法： 换一个国内能访问的代理地址：https://goproxy.cn
+go env -w GOPROXY=https://goproxy.cn  验证是否安装成功：
+$ hugo version Hugo Static Site Generator v0.</description>
     </item>
     
   </channel>

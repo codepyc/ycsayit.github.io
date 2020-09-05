@@ -4,7 +4,7 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>hugo搭建博客站点 - My New Hugo Site</title>
+	<title>Github Pages &#43; Hugo搭建个人博客 - My New Hugo Site</title>
 	<script>(function(d,e){d[e]=d[e].replace("no-js","js");})(document.documentElement,"className");</script>
 	<meta name="description" content="">
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -40,19 +40,68 @@
 <main class="main" role="main">
 	<article class="post">
 		<header class="post__header">
-			<h1 class="post__title">hugo搭建博客站点</h1>
+			<h1 class="post__title">Github Pages &#43; Hugo搭建个人博客</h1>
 			
 		</header><div class="content post__content clearfix">
-			<h2 id="解决go包管理代理网址无法访问proxygolangorg">解决go包管理代理网址无法访问：proxy.golang.org</h2>
+			<h2 id="安装hugo">安装Hugo</h2>
+<p>Hugo官方安装文档：<a href="https://links.jianshu.com/go?to=https%3A%2F%2Fgohugo.io%2Fgetting-started%2Finstalling%2F">https://gohugo.io/getting-started/installing/</a></p>
+<p>Windows环境下源码安装</p>
+<p>依赖工具：</p>
+<ol>
+<li>Go</li>
+<li>Git</li>
+</ol>
+<p>下载Hugo源码并编译</p>
+<pre><code>$ git clone https://github.com/gohugoio/hugo.git
+
+$ cd hugo/
+
+$ go install
+</code></pre><blockquote>
+<h6 id="解决go包管理代理网址无法访问proxygolangorg">解决go包管理代理网址无法访问：proxy.golang.org</h6>
 <p>默认使用的是proxy.golang.org，在国内无法访问</p>
-<blockquote>
 <p>$ go install</p>
 <p>go: <a href="mailto:github.com/BurntSushi/locker@v0.0.0-20171006230638-a6e239ea1c69">github.com/BurntSushi/locker@v0.0.0-20171006230638-a6e239ea1c69</a>: Get &ldquo;<a href="https://proxy.golang.org/github.com/%21burnt%21sushi/locker/@v/v0.0.0-20171006230638-a6e239ea1c69.mod%22:">https://proxy.golang.org/github.com/%21burnt%21sushi/locker/@v/v0.0.0-20171006230638-a6e239ea1c69.mod&quot;:</a> dial tcp 34.64.4.81:443: connectex: A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond.</p>
-</blockquote>
 <p>解决方法：
 换一个国内能访问的代理地址：https://goproxy.cn</p>
 <pre><code>go env -w GOPROXY=https://goproxy.cn
-</code></pre>
+</code></pre></blockquote>
+<p>验证是否安装成功：</p>
+<pre><code>$ hugo version
+
+Hugo Static Site Generator v0.75.0-DEV windows/amd64 BuildDate: unknown
+</code></pre><h2 id="创建博客站点">创建博客站点</h2>
+<pre><code>$ hugo new site ycblog
+
+Congratulations! Your new Hugo site is created in D:\ycblog.
+</code></pre><pre><code>$ cd ycblog/
+</code></pre><h4 id="站点目录结构">站点目录结构</h4>
+<pre><code>config.toml
+content/
+data/
+layouts/
+static/
+themes/
+</code></pre><h2 id="新建文章">新建文章</h2>
+<pre><code>$ hugo new post/buildhugoblog.md
+D:\ycblog\content\post\buildhugoblog.md created
+</code></pre><p>安装主题</p>
+<pre><code>$ cd themes/
+
+$ git clone https://github.com/Vimux/Mainroad.git
+</code></pre><p>回到站点根目录</p>
+<pre><code>$ cd ..
+</code></pre><h2 id="本地调试">本地调试</h2>
+<pre><code>$ hugo server -t Mainroad --buildDrafts
+</code></pre><p>其中 &ndash;theme 选项可以指定主题，–buildDrafts 包括标记为草稿
+然后在浏览器里打开： <a href="http://localhost:1313/">http://localhost:1313</a> 即可访问到你的博客</p>
+<h2 id="部署到github">部署到Github</h2>
+<pre><code>$ hugo -t Mainroad --baseUrl=&quot;https://ycsayit.github.io/&quot; --buildDrafts
+</code></pre><p>根目录下生成public文件夹</p>
+<p>执行git 命令，将public目录添加远程仓库</p>
+<p>浏览器里访问：<a href="https://ycsayit.github.io">https://ycsayit.github.io</a>，验证博客搭建成功</p>
+<hr>
+
 		</div>
 	</article>
 </main>
