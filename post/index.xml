@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Posts on My New Hugo Site</title>
+    <link>https://ycsayit.github.io/post/</link>
+    <description>Recent content in Posts on My New Hugo Site</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sat, 05 Sep 2020 16:56:23 +0800</lastBuildDate><atom:link href="https://ycsayit.github.io/post/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>hugo搭建博客站点</title>
+      <link>https://ycsayit.github.io/post/buildhugoblog/</link>
+      <pubDate>Sat, 05 Sep 2020 16:56:23 +0800</pubDate>
+      
+      <guid>https://ycsayit.github.io/post/buildhugoblog/</guid>
+      <description>解决go包管理代理网址无法访问：proxy.golang.org 默认使用的是proxy.golang.org，在国内无法访问
+ $ go install
+go: github.com/BurntSushi/locker@v0.0.0-20171006230638-a6e239ea1c69: Get &amp;ldquo;https://proxy.golang.org/github.com/%21burnt%21sushi/locker/@v/v0.0.0-20171006230638-a6e239ea1c69.mod&amp;quot;: dial tcp 34.64.4.81:443: connectex: A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond.
+ 解决方法： 换一个国内能访问的代理地址：https://goproxy.cn
+go env -w GOPROXY=https://goproxy.cn </description>
+    </item>
+    
+  </channel>
+</rss>
