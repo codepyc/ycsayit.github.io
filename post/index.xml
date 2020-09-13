@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Posts on </title>
+    <title>Posts on 小工IT记</title>
     <link>https://ycsayit.github.io/post/</link>
-    <description>Recent content in Posts on </description>
+    <description>Recent content in Posts on 小工IT记</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>zh-cn</language>
+    <language>en-us</language>
     <lastBuildDate>Sat, 05 Sep 2020 16:56:23 +0800</lastBuildDate><atom:link href="https://ycsayit.github.io/post/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Github Pages &#43; Hugo搭建个人博客实践</title>
@@ -13,16 +13,27 @@
       <pubDate>Sat, 05 Sep 2020 16:56:23 +0800</pubDate>
       
       <guid>https://ycsayit.github.io/post/buildhugoblog/</guid>
-      <description>安装Hugo Hugo官方安装文档：https://gohugo.io/getting-started/installing/
-Hugo中文文档：https://www.gohugo.org/doc/overview/introduction/
-Windows环境下源码安装
-依赖工具：
- Go Git  下载Hugo源码并编译
-$ git clone https://github.com/gohugoio/hugo.git $ cd hugo/ $ go install  解决go包管理代理网址无法访问：proxy.golang.org 默认使用的是proxy.golang.org，在国内无法访问
-$ go install
-go: github.com/BurntSushi/locker@v0.0.0-20171006230638-a6e239ea1c69: Get &amp;ldquo;https://proxy.golang.org/github.com/%21burnt%21sushi/locker/@v/v0.0.0-20171006230638-a6e239ea1c69.mod&amp;quot;: dial tcp 34.64.4.81:443: connectex: A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond.
-解决方法： 换一个国内能访问的代理地址：https://goproxy.cn
-go env -w GOPROXY=https://goproxy.cn  验证是否安装成功：</description>
+      <description>&lt;h2 id=&#34;1-安装hugo&#34;&gt;1 安装Hugo&lt;/h2&gt;
+&lt;p&gt;Hugo官方文档：&lt;a href=&#34;https://gohugo.io/getting-started/installing/&#34;&gt;https://gohugo.io/getting-started/installing/&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Hugo中文文档：&lt;a href=&#34;https://www.gohugo.org/doc/overview/introduction/&#34;&gt;https://www.gohugo.org/doc/overview/introduction/&lt;/a&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Basic HTML Elements</title>
+      <link>https://ycsayit.github.io/post/basic-elements/</link>
+      <pubDate>Mon, 16 Apr 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://ycsayit.github.io/post/basic-elements/</guid>
+      <description>&lt;p&gt;The main purpose of this article is to make sure that all basic HTML Elements are decorated with CSS so as to not miss any possible elements when creating new themes for Hugo.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Creating a New Theme</title>
+      <link>https://ycsayit.github.io/post/creating-a-new-theme/</link>
+      <pubDate>Sun, 28 Sep 2014 00:00:00 +0000</pubDate>
+      
+      <guid>https://ycsayit.github.io/post/creating-a-new-theme/</guid>
+      <description>Introduction This tutorial will show you how to create a simple theme in Hugo. I assume that you are familiar with HTML, the bash command line, and that you are comfortable using Markdown to format content. I&amp;rsquo;ll explain how Hugo uses templates and how you can organize your templates to create a theme.</description>
     </item>
     
   </channel>
