@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Git on 小工IT记</title>
+    <link>https://ycsayit.github.io/tags/git/</link>
+    <description>Recent content in Git on 小工IT记</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Tue, 15 Sep 2020 22:14:52 +0800</lastBuildDate><atom:link href="https://ycsayit.github.io/tags/git/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>解决Windows下git bash中文乱码</title>
+      <link>https://ycsayit.github.io/post/windows_git_zh_errorcode/</link>
+      <pubDate>Tue, 15 Sep 2020 22:14:52 +0800</pubDate>
+      
+      <guid>https://ycsayit.github.io/post/windows_git_zh_errorcode/</guid>
+      <description>Git Bash配置 当前目录右击打开Git Bash，右击窗口进入options 分别将Text选项的Loca</description>
+    </item>
+    
+  </channel>
+</rss>

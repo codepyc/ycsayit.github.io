@@ -3,27 +3,37 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>https://ycsayit.github.io/tags/git/</loc>
+    <lastmod>2020-09-15T22:14:52+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://ycsayit.github.io/post/</loc>
+    <lastmod>2020-09-15T22:14:52+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://ycsayit.github.io/tags/</loc>
+    <lastmod>2020-09-15T22:14:52+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://ycsayit.github.io/</loc>
+    <lastmod>2020-09-15T22:14:52+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://ycsayit.github.io/post/windows_git_zh_errorcode/</loc>
+    <lastmod>2020-09-15T22:14:52+08:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://ycsayit.github.io/post/buildhugoblog/</loc>
     <lastmod>2020-09-05T16:56:23+08:00</lastmod>
   </url>
   
   <url>
     <loc>https://ycsayit.github.io/tags/hugo/</loc>
-    <lastmod>2020-09-05T16:56:23+08:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://ycsayit.github.io/post/</loc>
-    <lastmod>2020-09-05T16:56:23+08:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://ycsayit.github.io/tags/</loc>
-    <lastmod>2020-09-05T16:56:23+08:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://ycsayit.github.io/</loc>
     <lastmod>2020-09-05T16:56:23+08:00</lastmod>
   </url>
   
