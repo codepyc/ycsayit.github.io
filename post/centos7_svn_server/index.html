@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en-us">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>CentOS 7 搭建SVN服务器 - 小工IT记</title>
+	<script>(function(d,e){d[e]=d[e].replace("no-js","js");})(document.documentElement,"className");</script>
+	<script type="text/javascript" src="/js/jquery.min.js"></script>
+	
+	<script src="/js/jquery.toTop.min.js"></script>
+	
+	<meta name="description" content="">
+		<meta property="og:title" content="CentOS 7 搭建SVN服务器" />
+<meta property="og:description" content="CentOS 7 搭建SVN服务器 1、安装 yum -y install subversion 若需查看svn安装位置，可以用以下命令： rpm -ql subversion 2、创建版本库目录" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://ycsayit.github.io/post/centos7_svn_server/" />
+<meta property="article:published_time" content="2021-05-16T20:37:57+08:00" />
+<meta property="article:modified_time" content="2021-05-16T20:37:57+08:00" />
+
+		<meta itemprop="name" content="CentOS 7 搭建SVN服务器">
+<meta itemprop="description" content="CentOS 7 搭建SVN服务器 1、安装 yum -y install subversion 若需查看svn安装位置，可以用以下命令： rpm -ql subversion 2、创建版本库目录">
+<meta itemprop="datePublished" content="2021-05-16T20:37:57+08:00" />
+<meta itemprop="dateModified" content="2021-05-16T20:37:57+08:00" />
+<meta itemprop="wordCount" content="1237">
+
+
+
+<meta itemprop="keywords" content="SVN," />
+
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link rel="dns-prefetch" href="//fonts.googleapis.com">
+	<link rel="dns-prefetch" href="//fonts.gstatic.com">
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:400,400i,700">
+	
+	<link rel="stylesheet" href="/css/style.css">	
+	<link rel="stylesheet" type="text/css" href="/css/highlight.css">
+	
+	
+	<link rel="stylesheet" href="/css/share.min.css">
+	<script src="/js/social-share.min.js"></script>
+	<script src="/js/qrcode.js"></script>
+	
+	
+
+	<link rel="shortcut icon" href="/favicon.ico">
+		
+	
+</head>
+<body class="body">
+	<div class="container container--outer">
+		<header class="header">
+	<div class="container header__container">
+		
+	<div class="logo">
+		<a class="logo__link" href="/" title="小工IT记" rel="home">
+			<div class="logo__item logo__text">
+					<div class="logo__title">小工IT记</div>
+					
+				</div>
+		</a>
+	</div>
+		<div class="divider"></div>
+	</div>
+</header>
+		<div class="wrapper flex">
+			<div class="primary">
+			
+<main class="main" role="main">
+	<article class="post">
+		<header class="post__header">
+			<h1 class="post__title">CentOS 7 搭建SVN服务器</h1>
+			<div class="post__meta meta">
+<div class="meta__item-datetime meta__item">
+	<svg class="meta__icon icon icon-time" width="16" height="14" viewBox="0 0 30 28"><path d="M15 0C7 0 1 6 1 14s6 14 14 14 14-6 14-14S23 0 15 0zm0 25C9 25 4 20 4 14S9 3 15 3s11 5 11 11-5 11-11 11zm1-18h-2v8.4l6.8 4.4L22 18l-6-3.8V7z"/></svg><time class="meta__text" datetime="2021-05-16T20:37:57&#43;08:00">2021-05-16</time></div><div class="meta__item-datetime meta__item">
+	
+	<span class="meta__text">约&nbsp;1237&nbsp;字</span>
+</div></div>
+		</header>
+  
+    <div class="toc">
+        <div class="toc__title"><span id="toc_menu_tip">展开书签</span></div>
+        <div class="toc__menu">
+          <nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#1安装">1、安装</a></li>
+        <li><a href="#2创建版本库目录此仅为目录为后面创建版本库提供存放位置">2、创建版本库目录（此仅为目录，为后面创建版本库提供存放位置）</a></li>
+        <li><a href="#3创建svn版本库">3、创建svn版本库</a></li>
+        <li><a href="#4配置修改">4、配置修改</a></li>
+        <li><a href="#5防火墙开启这里以iptable防火墻为例">5、防火墙开启（这里以iptable防火墻为例）</a></li>
+        <li><a href="#6启动svn服务器">6、启动svn服务器</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+        </div>  
+    </div>
+    <script type="text/javascript">
+    $(".toc__title").click( function () {
+      if($(".toc__menu").css('display') == 'none') {
+        $(".toc__menu").show(); 
+        $("#toc_menu_tip").html("收起书签");
+      } else {
+        $(".toc__menu").hide(); 
+        $("#toc_menu_tip").html("展开书签");
+      }
+    });
+    </script>
+  
+<div class="content post__content clearfix">
+			<h1 id="centos-7-搭建svn服务器">CentOS 7 搭建SVN服务器</h1>
+<h3 id="1安装">1、安装</h3>
+<pre><code>yum -y install subversion
+</code></pre><p>若需查看svn安装位置，可以用以下命令：</p>
+<pre><code>rpm -ql subversion
+</code></pre><h3 id="2创建版本库目录此仅为目录为后面创建版本库提供存放位置">2、创建版本库目录（此仅为目录，为后面创建版本库提供存放位置）</h3>
+<pre><code>mkdir /var/svnrepos
+</code></pre><h3 id="3创建svn版本库">3、创建svn版本库</h3>
+<pre><code>svnadmin create /var/svnrepos/yctest
+</code></pre><h3 id="4配置修改">4、配置修改</h3>
+<p>cd /var/svnrepos/yctest/conf
+ls</p>
+<p>authz：负责账号权限的管理，控制账号是否读写权限</p>
+<p>passwd：负责账号和密码的用户名单管理</p>
+<p>svnserve.conf：svn服务器配置文件</p>
+<p>1.编辑 authz 文件（注意：[/]也是必须的）</p>
+<pre><code>[aliases]
+# joe = /C=XZ/ST=Dessert/L=Snake City/O=Snake Oil, Ltd./OU=Research Institute/CN=Joe Average
+
+[groups]
+# harry_and_sally = harry,sally
+# harry_sally_and_joe = harry,sally,&amp;joe
+
+# [/foo/bar]
+# harry = rw
+# &amp;joe = r
+# * =
+
+# [repository:/baz/fuz]
+# @harry_and_sally = rw
+# * = r
+#
+[/]
+test = rw 
+</code></pre><p>[/]   表示根目录，即 /var/svnrepos</p>
+<p>test= rw  表示用户test对根目录具有读写权限。</p>
+<p>2.编辑 passwd 文件</p>
+<pre><code>### This file is an example password file for svnserve.
+### Its format is similar to that of svnserve.conf. As shown in the
+### example below it contains one section labelled [users].
+### The name and password for each user follow, one account per line.
+
+[users]
+# harry = harryssecret
+# sally = sallyssecret
+test = test
+</code></pre><p>如上所示，用户名为：test，认证密码为：test</p>
+<p>3.编辑 svnserve.conf 文件（注意：配置的前面不能有空格，一定要顶格写）</p>
+<pre><code>### This file controls the configuration of the svnserve daemon, if you
+### use it to allow access to this repository.  (If you only allow
+### access through http: and/or file: URLs, then this file is
+### irrelevant.)
+
+### Visit http://subversion.apache.org/ for more information.
+
+[general]
+### The anon-access and auth-access options control access to the
+### repository for unauthenticated (a.k.a. anonymous) users and
+### authenticated users, respectively.
+### Valid values are &quot;write&quot;, &quot;read&quot;, and &quot;none&quot;.
+### Setting the value to &quot;none&quot; prohibits both reading and writing;
+### &quot;read&quot; allows read-only access, and &quot;write&quot; allows complete 
+### read/write access to the repository.
+### The sample settings below are the defaults and specify that anonymous
+### users have read-only access to the repository, while authenticated
+### users have read and write access to the repository.
+anon-access = none
+auth-access = write
+### The password-db option controls the location of the password
+### database file.  Unless you specify a path starting with a /,
+### the file's location is relative to the directory containing
+### this configuration file.
+### If SASL is enabled (see below), this file will NOT be used.
+### Uncomment the line below to use the default password file.
+password-db = passwd
+### The authz-db option controls the location of the authorization
+### rules for path-based access control.  Unless you specify a path
+### starting with a /, the file's location is relative to the the
+### directory containing this file.  If you don't specify an
+### authz-db, no path-based access control is done.
+### Uncomment the line below to use the default authorization file.
+authz-db = authz
+### This option specifies the authentication realm of the repository.
+### If two repositories have the same authentication realm, they should
+### have the same password database, and vice versa.  The default realm
+### is repository's uuid.
+realm = /var/svnrepos
+### The force-username-case option causes svnserve to case-normalize
+### usernames before comparing them against the authorization rules in the
+### authz-db file configured above.  Valid values are &quot;upper&quot; (to upper-
+### case the usernames), &quot;lower&quot; (to lowercase the usernames), and
+### &quot;none&quot; (to compare usernames as-is without case conversion, which
+### is the default behavior).
+# force-username-case = none
+
+[sasl]
+### This option specifies whether you want to use the Cyrus SASL
+</code></pre><p>anon-access = none：表示禁止匿名用户访问。</p>
+<p>auth-access = write：表示授权用户拥有读写权限。</p>
+<p>password-db = passswd：指定用户名口令文件，即 passwd 文件。</p>
+<p>authz-db = authz：指定权限配置文件，即 authz 文件。</p>
+<p>realm = /var/svnrepos：指定认证域，即 /var/svnrepos 目录。</p>
+<h3 id="5防火墙开启这里以iptable防火墻为例">5、防火墙开启（这里以iptable防火墻为例）</h3>
+<p>多数情况下服务器安装完成，配置完成后，无法连接svn服务器，均是防火墙问题【注意：如果是阿里云，腾讯云的服务器，还需在安全组添加端口开启规则】</p>
+<pre><code>vi /etc/sysconfig/iptables
+</code></pre><p>添加配置信息</p>
+<pre><code>-A INPUT -p tcp -m state --state NEW -m tcp --dport 3690 -j ACCEPT
+</code></pre><p>保存退出</p>
+<pre><code>systemctl restart iptables.service #重启防火墙使配置生效
+</code></pre><h3 id="6启动svn服务器">6、启动svn服务器</h3>
+<pre><code>svnserve -d -r /var/svnrepos
+</code></pre><p>启动成功后，可用ps -aux查看服务启动是否成功</p>
+<pre><code>ps -ef |grep svnserve
+</code></pre><pre><code>[root@yc_svn_01 conf]# ps -ef |grep svnserve
+root       6852      1  0 17:10 ?        00:00:00 /usr/bin/svnserve --daemon --pid-file=/run/svnserve/svnserve.pid -r /var/svnrepos
+root      16487   7402  0 20:11 pts/0    00:00:00 grep --color=auto svnserve
+[root@yc_svn_01 conf]# 
+</code></pre><p><strong>七：客户端访问svn服务器</strong></p>
+<p>在windows客户端，输入地址：svn://ip地址:3690/xxxx   （iP地址为你linux的ip，xxxx为前文创建的版本库名称,3690为svn默认端口）</p>
+<p>弹出输入用户名和密码，输入即可访问</p>
+<p>或者在linux服务器输入命令测试：</p>
+<pre><code>svn co svn://ip地址:3690/xxxx
+</code></pre><p>svn co svn://192.168.198.11:3690/yctest</p>
+
+		</div>
+		<footer class="post__footer">
+			
+<div class="post__tags tags clearfix">
+	<svg class="tags__badge icon icon-tag" width="16" height="16" viewBox="0 0 32 32"><path d="M32 19c0 1-1 2-1 2L21 31s-1 1-2 1-2-1-2-1L2 16c-1-1-1.4-2-1.4-2S0 12.5 0 11V3C0 1.5.8.8.8.8S1.5 0 3 0h8c1.5 0 3 .6 3 .6S15 1 16 2l15 15s1 1 1 2zM7 10a3 3 0 1 0 0-6 3 3 0 0 0 0 6z"/></svg>
+	<ul class="tags__list">
+		<li class="tags__item">
+			<a class="tags__link btn" href="/tags/svn/" rel="tag">SVN</a>
+		</li>
+	</ul>
+</div>
+		</footer>
+	</article>
+</main>
+<div class="social-share"></div>
+  <br/>
+
+
+
+
+
+<nav class="pager flex">
+	<div class="pager__item pager__item--prev">
+		<a class="pager__link" href="/post/centos7_samba_server/" rel="prev">
+			<span class="pager__subtitle">«&thinsp;上一篇</span>
+			<p class="pager__title">CentOS 7配置samba</p>
+		</a>
+	</div>
+</nav>
+
+<span id="/post/centos7_svn_server/" class="leancloud_visitors" data-flag-title="CentOS 7 搭建SVN服务器">
+  <span class="post-meta-item-text">文章阅读量 </span>
+  <span class="leancloud-visitors-count"><i class="leancloud-visitors-count"></i></span>次
+  <p></p>
+</span>
+<section id="vcomments"></section>
+<script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+<script src='//unpkg.com/valine/dist/Valine.min.js'></script>
+<script type="text/javascript">
+new Valine({
+    el: '#vcomments' ,
+    appId: 'dSHODRwFl6fvGHlWd5evJcIv-gzGzoHsz',
+    appKey: '0oROYRFRIlvGY6YFNpLhNxM9',
+    notify:  false , 
+    verify:  false , 
+    avatar:'mm', 
+    placeholder: '说点什么吧...',
+    visitor:  true 
+});
+</script>
+
+			</div>
+			<aside class="sidebar"><div class="widget-search widget">
+	<form class="widget-search__form" role="search" method="get" action="https://duckduckgo.com/">
+		<label>
+			<input class="widget-search__field" type="search" placeholder="搜索..." value="" name="q" aria-label="搜索...">
+		</label>
+		<input class="widget-search__submit" type="submit" value="Search">
+		<input type="hidden" name="sites" value="https://ycsayit.github.io/"/>
+	</form>
+</div>
+<div class="widget-recent widget">
+	<h4 class="widget__title">近期文章</h4>
+	<div class="widget__content">
+		<ul class="widget__list">
+			<li class="widget__item"><a class="widget__link" href="/post/centos7_svn_server/">CentOS 7 搭建SVN服务器</a></li>
+			<li class="widget__item"><a class="widget__link" href="/post/centos7_samba_server/">CentOS 7配置samba</a></li>
+			<li class="widget__item"><a class="widget__link" href="/post/win10_install_fail_2503/">win10软件安装失败出现错误代码2503/2502</a></li>
+			<li class="widget__item"><a class="widget__link" href="/post/windows_git_zh_errorcode/">解决Windows下git bash中文乱码</a></li>
+			<li class="widget__item"><a class="widget__link" href="/post/buildhugoblog/">Github Pages &#43; Hugo搭建个人博客实践</a></li>
+		</ul>
+	</div>
+</div>
+<div class="widget-taglist widget">
+	<h4 class="widget__title">标签</h4>
+	<div class="widget__content">
+		<a class="widget-taglist__link widget__link btn" href="/tags/2503/2502/" title="2503/2502">2503/2502</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/git/" title="Git">Git</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/hugo/" title="Hugo">Hugo</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/samba/" title="samba">samba</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/svn/" title="SVN">SVN</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/win10/" title="win10">win10</a>
+	</div>
+</div>
+</aside>
+		</div>
+		<footer class="footer">
+	<div class="container footer__container flex">
+		
+		<div class="footer__copyright">
+			&copy; 2021 yc.
+			<span class="footer__copyright-credits">基于 <a href="https://gohugo.io/" rel="nofollow noopener" target="_blank">Hugo</a> 引擎和 <a href="https://github.com/Vimux/Mainroad/" rel="nofollow noopener" target="_blank">Mainroad</a>主題</span>
+		</div>
+	</div>
+</footer>
+	</div>
+<script async defer src="/js/menu.js"></script>
+<script async src="/js/highlight.js"></script>
+ 
+  <script>
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https'){
+   bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+  }
+  else{
+  bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+  }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+
+
+ 
+  
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?1af47e5cc9393a57c0370ded1ad08515";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+
+
+
+<script type="text/javascript">
+    (function(){
+        $("pre code").parent().addClass("line-numbers")
+    }())
+</script>
+
+<a class="to-top" style="background-color:#666;color:#fff;width:40px;height:40px;text-align:center;padding-top:3px;line-height:18px;">返回顶部</a>
+<script type="text/javascript">
+$('.to-top').toTop();
+</script>
+
+</body>
+</html>

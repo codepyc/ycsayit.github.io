@@ -3,13 +3,38 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>https://ycsayit.github.io/post/centos7_svn_server/</loc>
+    <lastmod>2021-05-16T20:37:57+08:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://ycsayit.github.io/post/</loc>
-    <lastmod>2021-01-04T21:47:47+08:00</lastmod>
+    <lastmod>2021-05-16T20:37:57+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://ycsayit.github.io/tags/svn/</loc>
+    <lastmod>2021-05-16T20:37:57+08:00</lastmod>
   </url>
   
   <url>
     <loc>https://ycsayit.github.io/tags/</loc>
-    <lastmod>2021-01-04T21:47:47+08:00</lastmod>
+    <lastmod>2021-05-16T20:37:57+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://ycsayit.github.io/</loc>
+    <lastmod>2021-05-16T20:37:57+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://ycsayit.github.io/post/centos7_samba_server/</loc>
+    <lastmod>2021-05-16T20:35:13+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://ycsayit.github.io/tags/samba/</loc>
+    <lastmod>2021-05-16T20:35:13+08:00</lastmod>
   </url>
   
   <url>
@@ -19,11 +44,6 @@
   
   <url>
     <loc>https://ycsayit.github.io/post/win10_install_fail_2503/</loc>
-    <lastmod>2021-01-04T21:47:47+08:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://ycsayit.github.io/</loc>
     <lastmod>2021-01-04T21:47:47+08:00</lastmod>
   </url>
   

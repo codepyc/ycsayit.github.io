@@ -4,29 +4,29 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>解决Windows下git bash中文乱码 - 小工IT记</title>
+	<title>CentOS 7配置samba - 小工IT记</title>
 	<script>(function(d,e){d[e]=d[e].replace("no-js","js");})(document.documentElement,"className");</script>
 	<script type="text/javascript" src="/js/jquery.min.js"></script>
 	
 	<script src="/js/jquery.toTop.min.js"></script>
 	
 	<meta name="description" content="">
-		<meta property="og:title" content="解决Windows下git bash中文乱码" />
-<meta property="og:description" content="Git Bash配置 当前目录右击打开Git Bash，右击窗口进入options 分别将Text选项的Loca" />
+		<meta property="og:title" content="CentOS 7配置samba" />
+<meta property="og:description" content="CentOS 7配置samba 安装 [root@jenkins_master opt]# yum install samba 配置服务 [root@jenkins_master opt]# vim /etc/samba/smb.conf [jenkins] comment = root directory path = /opt available = yes browseable = yes public = yes writable = yes guest ok = yes 启动" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://ycsayit.github.io/post/windows_git_zh_errorcode/" />
-<meta property="article:published_time" content="2020-09-15T22:14:52+08:00" />
-<meta property="article:modified_time" content="2020-09-15T22:14:52+08:00" />
+<meta property="og:url" content="https://ycsayit.github.io/post/centos7_samba_server/" />
+<meta property="article:published_time" content="2021-05-16T20:35:13+08:00" />
+<meta property="article:modified_time" content="2021-05-16T20:35:13+08:00" />
 
-		<meta itemprop="name" content="解决Windows下git bash中文乱码">
-<meta itemprop="description" content="Git Bash配置 当前目录右击打开Git Bash，右击窗口进入options 分别将Text选项的Loca">
-<meta itemprop="datePublished" content="2020-09-15T22:14:52+08:00" />
-<meta itemprop="dateModified" content="2020-09-15T22:14:52+08:00" />
-<meta itemprop="wordCount" content="412">
+		<meta itemprop="name" content="CentOS 7配置samba">
+<meta itemprop="description" content="CentOS 7配置samba 安装 [root@jenkins_master opt]# yum install samba 配置服务 [root@jenkins_master opt]# vim /etc/samba/smb.conf [jenkins] comment = root directory path = /opt available = yes browseable = yes public = yes writable = yes guest ok = yes 启动">
+<meta itemprop="datePublished" content="2021-05-16T20:35:13+08:00" />
+<meta itemprop="dateModified" content="2021-05-16T20:35:13+08:00" />
+<meta itemprop="wordCount" content="157">
 
 
 
-<meta itemprop="keywords" content="Git," />
+<meta itemprop="keywords" content="samba," />
 
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 	<link rel="dns-prefetch" href="//fonts.googleapis.com">
@@ -69,12 +69,12 @@
 <main class="main" role="main">
 	<article class="post">
 		<header class="post__header">
-			<h1 class="post__title">解决Windows下git bash中文乱码</h1>
+			<h1 class="post__title">CentOS 7配置samba</h1>
 			<div class="post__meta meta">
 <div class="meta__item-datetime meta__item">
-	<svg class="meta__icon icon icon-time" width="16" height="14" viewBox="0 0 30 28"><path d="M15 0C7 0 1 6 1 14s6 14 14 14 14-6 14-14S23 0 15 0zm0 25C9 25 4 20 4 14S9 3 15 3s11 5 11 11-5 11-11 11zm1-18h-2v8.4l6.8 4.4L22 18l-6-3.8V7z"/></svg><time class="meta__text" datetime="2020-09-15T22:14:52&#43;08:00">2020-09-15</time></div><div class="meta__item-datetime meta__item">
+	<svg class="meta__icon icon icon-time" width="16" height="14" viewBox="0 0 30 28"><path d="M15 0C7 0 1 6 1 14s6 14 14 14 14-6 14-14S23 0 15 0zm0 25C9 25 4 20 4 14S9 3 15 3s11 5 11 11-5 11-11 11zm1-18h-2v8.4l6.8 4.4L22 18l-6-3.8V7z"/></svg><time class="meta__text" datetime="2021-05-16T20:35:13&#43;08:00">2021-05-16</time></div><div class="meta__item-datetime meta__item">
 	
-	<span class="meta__text">约&nbsp;412&nbsp;字</span>
+	<span class="meta__text">约&nbsp;157&nbsp;字</span>
 </div></div>
 		</header>
   
@@ -83,10 +83,14 @@
         <div class="toc__menu">
           <nav id="TableOfContents">
   <ul>
-    <li><a href="#git-bash配置">Git Bash配置</a></li>
-    <li><a href="#etcinputrc文件修改">etc\inputrc文件修改</a></li>
-    <li><a href="#etcprofile文件修改">etc\profile文件修改</a></li>
-    <li><a href="#etcgitconfig文件修改">etc\gitconfig文件修改</a></li>
+    <li>
+      <ul>
+        <li><a href="#安装">安装</a></li>
+        <li><a href="#配置服务">配置服务</a></li>
+        <li><a href="#启动服务">启动服务</a></li>
+        <li><a href="#添加账户添加的账户必须linux已经创建的">添加账户(添加的账户必须linux已经创建的)</a></li>
+      </ul>
+    </li>
   </ul>
 </nav>
         </div>  
@@ -104,33 +108,35 @@
     </script>
   
 <div class="content post__content clearfix">
-			<h2 id="git-bash配置">Git Bash配置</h2>
-<p>当前目录右击打开Git Bash，右击窗口进入options</p>
-<p>分别将Text选项的Locale改为zh-CN，character-set改为UTF-8，如下图所示：</p>
-<p><img src="git_options.png" alt="options"></p>
-<h2 id="etcinputrc文件修改">etc\inputrc文件修改</h2>
-<p>查找以下2行，并修改为如图所示，使得在 Git Bash 中可以正常输入中文</p>
-<pre><code>set output-meta on
-set convert-meta off
-</code></pre><p><img src="git_etc_inputrc.png" alt="git_etc_inputrc"></p>
-<h2 id="etcprofile文件修改">etc\profile文件修改</h2>
-<p>在最后增加以下2行内容</p>
-<pre><code>export LESSHARESET=utf-8
-alias ls='ls -F --color=auto --show-control-chars'
-</code></pre><p>注：</p>
-<p>1.git log 输出时默认用 less 作分页工具，这里设置 less 的字符编码，使得 $ git log 可以正常显示中文</p>
-<p>2.使用 <strong>ls &ndash;show-control-chars</strong> 命令来强制使用控制台字符编码显示文件名，即可查看中文文件名</p>
-<h2 id="etcgitconfig文件修改">etc\gitconfig文件修改</h2>
-<p><img src="git_etc_gitconfig.png" alt="git_etc_gitconfig"></p>
-<p>或者在Bash提示符下输入：</p>
-<pre><code>git config --global core.quotepath false
-git config --global gui.encoding utf-8
-git config --global i18n.commit.encoding utf-8
-git config --global i18n.logoutputencoding utf-8
-git config --global svn.pathnameencoding utf-8
-</code></pre><p>注：通过上述设置，UTF-8 编码的文本文件可以正常查看，但是 GBK 编码的文件将会乱码，所以还是没有从根本上解决问题。</p>
-<p>可行的方法之一为：将所有文本文件的编码统一为 UTF-8 或 GBK，然后设置相应的gui.encoding 参数为 utf-8 或 gbk</p>
-
+			<h1 id="centos-7配置samba">CentOS 7配置samba</h1>
+<h3 id="安装">安装</h3>
+<pre><code>[root@jenkins_master opt]# yum install samba
+</code></pre><h3 id="配置服务">配置服务</h3>
+<pre><code>[root@jenkins_master opt]# vim /etc/samba/smb.conf
+</code></pre><pre><code>[jenkins]
+	comment = root directory
+	path = /opt
+	available = yes
+	browseable = yes
+	public = yes
+	writable = yes
+	guest ok = yes
+</code></pre><h3 id="启动服务">启动服务</h3>
+<pre><code>[root@jenkins_master opt]# systemctl start smb
+[root@jenkins_master opt]# systemctl status smb
+● smb.service - Samba SMB Daemon
+   Loaded: loaded (/usr/lib/systemd/system/smb.service; disabled; vendor preset: disabled)
+   Active: active (running) since Sun 2021-05-16 17:49:00 CST; 6s ago
+</code></pre><h3 id="添加账户添加的账户必须linux已经创建的">添加账户(添加的账户必须linux已经创建的)</h3>
+<pre><code>[root@jenkins_master opt]# groupadd test -g 6000
+[root@jenkins_master opt]# useradd test -u 6000 -g 6000 -s /sbin/nologin -d /dev/null
+useradd: warning: the home directory already exists.
+Not copying any file from skel directory into it.
+[root@jenkins_master opt]# smbpasswd -a test
+New SMB password:
+Retype new SMB password:
+Added user test.
+</code></pre>
 		</div>
 		<footer class="post__footer">
 			
@@ -138,7 +144,7 @@ git config --global svn.pathnameencoding utf-8
 	<svg class="tags__badge icon icon-tag" width="16" height="16" viewBox="0 0 32 32"><path d="M32 19c0 1-1 2-1 2L21 31s-1 1-2 1-2-1-2-1L2 16c-1-1-1.4-2-1.4-2S0 12.5 0 11V3C0 1.5.8.8.8.8S1.5 0 3 0h8c1.5 0 3 .6 3 .6S15 1 16 2l15 15s1 1 1 2zM7 10a3 3 0 1 0 0-6 3 3 0 0 0 0 6z"/></svg>
 	<ul class="tags__list">
 		<li class="tags__item">
-			<a class="tags__link btn" href="/tags/git/" rel="tag">Git</a>
+			<a class="tags__link btn" href="/tags/samba/" rel="tag">samba</a>
 		</li>
 	</ul>
 </div>
@@ -154,20 +160,20 @@ git config --global svn.pathnameencoding utf-8
 
 <nav class="pager flex">
 	<div class="pager__item pager__item--prev">
-		<a class="pager__link" href="/post/buildhugoblog/" rel="prev">
+		<a class="pager__link" href="/post/win10_install_fail_2503/" rel="prev">
 			<span class="pager__subtitle">«&thinsp;上一篇</span>
-			<p class="pager__title">Github Pages &#43; Hugo搭建个人博客实践</p>
+			<p class="pager__title">win10软件安装失败出现错误代码2503/2502</p>
 		</a>
 	</div>
 	<div class="pager__item pager__item--next">
-		<a class="pager__link" href="/post/win10_install_fail_2503/" rel="next">
+		<a class="pager__link" href="/post/centos7_svn_server/" rel="next">
 			<span class="pager__subtitle">下一篇&thinsp;»</span>
-			<p class="pager__title">win10软件安装失败出现错误代码2503/2502</p>
+			<p class="pager__title">CentOS 7 搭建SVN服务器</p>
 		</a>
 	</div>
 </nav>
 
-<span id="/post/windows_git_zh_errorcode/" class="leancloud_visitors" data-flag-title="解决Windows下git bash中文乱码">
+<span id="/post/centos7_samba_server/" class="leancloud_visitors" data-flag-title="CentOS 7配置samba">
   <span class="post-meta-item-text">文章阅读量 </span>
   <span class="leancloud-visitors-count"><i class="leancloud-visitors-count"></i></span>次
   <p></p>
