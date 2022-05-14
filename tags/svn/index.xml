@@ -1,19 +1,19 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>SVN on 小工IT记</title>
-    <link>https://ycsayit.github.io/tags/svn/</link>
-    <description>Recent content in SVN on 小工IT记</description>
+    <title>SVN on codepyc blog</title>
+    <link>http://codepyc.gitee.io/tags/svn/</link>
+    <description>Recent content in SVN on codepyc blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sun, 16 May 2021 20:37:57 +0800</lastBuildDate><atom:link href="https://ycsayit.github.io/tags/svn/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 16 May 2021 20:37:57 +0800</lastBuildDate><atom:link href="http://codepyc.gitee.io/tags/svn/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>CentOS 7 搭建SVN服务器</title>
-      <link>https://ycsayit.github.io/post/centos7_svn_server/</link>
+      <link>http://codepyc.gitee.io/post/centos7_svn_server/</link>
       <pubDate>Sun, 16 May 2021 20:37:57 +0800</pubDate>
       
-      <guid>https://ycsayit.github.io/post/centos7_svn_server/</guid>
-      <description>CentOS 7 搭建SVN服务器 1、安装 yum -y install subversion 若需查看svn安装位置，可以用以下命令： rpm -ql subversion 2、创建版本库目录</description>
+      <guid>http://codepyc.gitee.io/post/centos7_svn_server/</guid>
+      <description>1、安装 yum -y install subversion 若需查看svn安装位置，可以用以下命令： rpm -ql subversion 2、创建版本库目录（此仅为目录，为后面</description>
     </item>
     
   </channel>

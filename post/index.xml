@@ -1,54 +1,54 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Posts on 小工IT记</title>
-    <link>https://ycsayit.github.io/post/</link>
-    <description>Recent content in Posts on 小工IT记</description>
+    <title>Posts on codepyc blog</title>
+    <link>http://codepyc.gitee.io/post/</link>
+    <description>Recent content in Posts on codepyc blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sun, 16 May 2021 20:37:57 +0800</lastBuildDate><atom:link href="https://ycsayit.github.io/post/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 16 May 2021 20:37:57 +0800</lastBuildDate><atom:link href="http://codepyc.gitee.io/post/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>CentOS 7 搭建SVN服务器</title>
-      <link>https://ycsayit.github.io/post/centos7_svn_server/</link>
+      <link>http://codepyc.gitee.io/post/centos7_svn_server/</link>
       <pubDate>Sun, 16 May 2021 20:37:57 +0800</pubDate>
       
-      <guid>https://ycsayit.github.io/post/centos7_svn_server/</guid>
-      <description>CentOS 7 搭建SVN服务器 1、安装 yum -y install subversion 若需查看svn安装位置，可以用以下命令： rpm -ql subversion 2、创建版本库目录</description>
+      <guid>http://codepyc.gitee.io/post/centos7_svn_server/</guid>
+      <description>1、安装 yum -y install subversion 若需查看svn安装位置，可以用以下命令： rpm -ql subversion 2、创建版本库目录（此仅为目录，为后面</description>
     </item>
     
     <item>
       <title>CentOS 7配置samba</title>
-      <link>https://ycsayit.github.io/post/centos7_samba_server/</link>
+      <link>http://codepyc.gitee.io/post/centos7_samba_server/</link>
       <pubDate>Sun, 16 May 2021 20:35:13 +0800</pubDate>
       
-      <guid>https://ycsayit.github.io/post/centos7_samba_server/</guid>
-      <description>CentOS 7配置samba 安装 [root@jenkins_master opt]# yum install samba 配置服务 [root@jenkins_master opt]# vim /etc/samba/smb.conf [jenkins] comment = root directory path = /opt available = yes browseable = yes public = yes writable = yes guest ok = yes 启动</description>
+      <guid>http://codepyc.gitee.io/post/centos7_samba_server/</guid>
+      <description>安装 [root@jenkins_master opt]# yum install samba 配置服务 [root@jenkins_master opt]# vim /etc/samba/smb.conf [jenkins] comment = root directory path = /opt available = yes browseable = yes public = yes writable = yes guest ok = yes 启动服务 [root@jenkins_master opt]# systemctl start smb [root@jenkins_master opt]#</description>
     </item>
     
     <item>
       <title>win10软件安装失败出现错误代码2503/2502</title>
-      <link>https://ycsayit.github.io/post/win10_install_fail_2503/</link>
+      <link>http://codepyc.gitee.io/post/win10_install_fail_2503/</link>
       <pubDate>Mon, 04 Jan 2021 21:47:47 +0800</pubDate>
       
-      <guid>https://ycsayit.github.io/post/win10_install_fail_2503/</guid>
+      <guid>http://codepyc.gitee.io/post/win10_install_fail_2503/</guid>
       <description>1.打开任务管理器，点击文件，点击运行新任务 如下图： 2.粘贴软件所在完整路径，勾选以系统管理权限创建</description>
     </item>
     
     <item>
       <title>解决Windows下git bash中文乱码</title>
-      <link>https://ycsayit.github.io/post/windows_git_zh_errorcode/</link>
+      <link>http://codepyc.gitee.io/post/windows_git_zh_errorcode/</link>
       <pubDate>Tue, 15 Sep 2020 22:14:52 +0800</pubDate>
       
-      <guid>https://ycsayit.github.io/post/windows_git_zh_errorcode/</guid>
+      <guid>http://codepyc.gitee.io/post/windows_git_zh_errorcode/</guid>
       <description>Git Bash配置 当前目录右击打开Git Bash，右击窗口进入options 分别将Text选项的Loca</description>
     </item>
     
     <item>
       <title>Github Pages &#43; Hugo搭建个人博客实践</title>
-      <link>https://ycsayit.github.io/post/buildhugoblog/</link>
+      <link>http://codepyc.gitee.io/post/buildhugoblog/</link>
       <pubDate>Sat, 05 Sep 2020 16:56:23 +0800</pubDate>
       
-      <guid>https://ycsayit.github.io/post/buildhugoblog/</guid>
+      <guid>http://codepyc.gitee.io/post/buildhugoblog/</guid>
       <description>&lt;h2 id=&#34;1-安装hugo&#34;&gt;1 安装Hugo&lt;/h2&gt;
 &lt;p&gt;Hugo官方文档：&lt;a href=&#34;https://gohugo.io/getting-started/installing/&#34;&gt;https://gohugo.io/getting-started/installing/&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;Hugo中文文档：&lt;a href=&#34;https://www.gohugo.org/doc/overview/introduction/&#34;&gt;https://www.gohugo.org/doc/overview/introduction/&lt;/a&gt;&lt;/p&gt;</description>

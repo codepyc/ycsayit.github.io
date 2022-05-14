@@ -1,17 +1,17 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>2503/2502 on 小工IT记</title>
-    <link>https://ycsayit.github.io/tags/2503/2502/</link>
-    <description>Recent content in 2503/2502 on 小工IT记</description>
+    <title>2503/2502 on codepyc blog</title>
+    <link>http://codepyc.gitee.io/tags/2503/2502/</link>
+    <description>Recent content in 2503/2502 on codepyc blog</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>en-us</language><atom:link href="https://ycsayit.github.io/tags/2503/2502/index.xml" rel="self" type="application/rss+xml" />
+    <language>en-us</language><atom:link href="http://codepyc.gitee.io/tags/2503/2502/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>win10软件安装失败出现错误代码2503/2502</title>
-      <link>https://ycsayit.github.io/post/win10_install_fail_2503/</link>
+      <link>http://codepyc.gitee.io/post/win10_install_fail_2503/</link>
       <pubDate>Mon, 04 Jan 2021 21:47:47 +0800</pubDate>
       
-      <guid>https://ycsayit.github.io/post/win10_install_fail_2503/</guid>
+      <guid>http://codepyc.gitee.io/post/win10_install_fail_2503/</guid>
       <description>1.打开任务管理器，点击文件，点击运行新任务 如下图： 2.粘贴软件所在完整路径，勾选以系统管理权限创建</description>
     </item>
     
